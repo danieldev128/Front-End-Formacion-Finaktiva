@@ -4,20 +4,21 @@
   max-width: 500px;
   padding-bottom: 50px;
   margin:auto;
+  padding-top: 50px;
+
 }
 
 .form-control {
   text-align: center;
-  height: 30px;
+  height: 40px;
   width: 400px;
   box-shadow: 0 10px 40px 0 #B0C1D9;
-
-
-
 }
 
 .titulo{
-  padding: 10px;
+  text-align: left;
+  padding-top: 10px;
+  padding-bottom: 20px;
 
 }
 
@@ -35,7 +36,16 @@
   right: 0;
   top: 0;
   z-index: -1;
+}
 
+.icon{
+
+  float:left;
+}
+
+.btnDelete{
+
+  margin-left: 8px;
 
 }
 

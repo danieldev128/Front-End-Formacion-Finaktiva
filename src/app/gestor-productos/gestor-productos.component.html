@@ -3,9 +3,16 @@
   <img src="../../assets/img/Logo.png"  id="logo"  height="200px" width="300px">
 </div>
 <div class="container">
+
+  <button class="btn btn-warning bntMain" (click)="openDialog()"><mat-icon>add</mat-icon>
+    Agregar Producto</button>
+
+
   <div class="row">
-    <div class="search-hero">
-      <mat-icon >search</mat-icon><input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Empezar a buscar un producto">
+
+    <div class="search-hero ">
+      <mat-icon class="icon"> search</mat-icon><input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Empezar a buscar un producto">
+
     </div>
     <table class=" table-bordered table-hover table-sm">
       <thead>
@@ -27,7 +34,8 @@
         <td>{{product.descripcionProducto}}</td>
         <td>Cantidad</td>
         <td>{{product.precioProducto}}</td>
-        <td><button type="button" class="btn btn-light">Editar</button></td>
+        <td><button type="button" (click)="openEditarDialog()" class="btn btn-light">Editar</button>
+        <button type="button" class="btn btn-danger btnDelete" ><mat-icon>delete</mat-icon></button></td>
       </tr>
       </tbody>
     </table>

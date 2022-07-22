@@ -18,6 +18,9 @@ import { GestorProductosComponent } from './gestor-productos/gestor-productos.co
 import { FormsModule } from '@angular/forms'
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { HttpClientModule} from '@angular/common/http';
+import { EditarProductoComponent } from './gestor-productos/editar-producto/editar-producto.component';
+import { AgregarProductoComponent } from './gestor-productos/agregar-producto/agregar-producto.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 
@@ -26,8 +29,12 @@ import { HttpClientModule} from '@angular/common/http';
     AppComponent,
     SidenavComponent,
     GestorProductosComponent,
+    EditarProductoComponent,
+    AgregarProductoComponent,
+
   ],
   imports: [
+    MatDialogModule,
     MatButtonModule,
     BrowserModule,
     AppRoutingModule,
