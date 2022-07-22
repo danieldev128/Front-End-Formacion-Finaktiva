@@ -40,8 +40,8 @@ export class GestorProductosComponent implements OnInit {
   }
   openDialog(): void{
     console.log('Hola');
-    const dialogRef = this.dialog.open(AgregarProductoComponent,{width: '1024px',
-    height: '300px',
+    const dialogRef = this.dialog.open(AgregarProductoComponent,{width: '500px',
+    height: '450px',
     data:'Ingreso de producto'});
     dialogRef.afterClosed().subscribe(res =>{
       console.log(res);

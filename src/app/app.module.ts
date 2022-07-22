@@ -15,7 +15,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import { GestorProductosComponent } from './gestor-productos/gestor-productos.component';
-import { FormsModule } from '@angular/forms'
+import { FormsModule,ReactiveFormsModule } from '@angular/forms'
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { HttpClientModule} from '@angular/common/http';
 import { EditarProductoComponent } from './gestor-productos/editar-producto/editar-producto.component';
@@ -45,7 +45,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     BrowserAnimationsModule,
     Ng2SearchPipeModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
 
 
   ],

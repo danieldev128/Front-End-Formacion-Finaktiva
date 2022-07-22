@@ -1,12 +1,12 @@
-<div class="mat-dialog-content">
-
+<div class="mat-dialog-content"><h2>{{message}}</h2>
+<form>
   <div class="mx-auto">
-    <div class="form  mt-1 col-sm-6">
+    <div class="form  mt-1 col-3">
       <label class="form-label" for="form3Example3">Id de producto:</label>
       <input type="text" disabled style="text-transform: uppercase;"
       required id="form3Example3" class="form-control" />
     </div>
-  <div class="form mx-auto mt-1">
+  <div class="form mt-1 col-5">
     <label class="form-label" for="form3Example3">Nombre de producto:</label>
     <input type="text" style="text-transform: uppercase;" required id="form3Example3" class="form-control" />
   </div>
@@ -14,19 +14,21 @@
     <label class="form-label"  for="form3Example3">Descripcion de producto:</label>
     <input type="text"  style="text-transform: uppercase;" required id="form3Example3" class="form-control" />
   </div>
-  <div class="form  mx-auto mt-1">
+  <div class="form  mt-1 col-4">
     <label class="form-label" for="form3Example3">Cantidad:</label>
     <input type="text" style="text-transform: uppercase;" required id="form3Example3" class="form-control" />
   </div>
-  <div class="form  mx-auto mt-1">
+  <div class="form mt-1 col-4 mb-3">
     <label class="form-label" for="form3Example3">Precio unitario:</label>
+    <mat-icon id="moneyIcon">attach_money</mat-icon>
     <input type="text" style="text-transform: uppercase;" required id="form3Example3" class="form-control" />
   </div>
-
-</div>
-<div style="text-align: right; margin-top: 30px;">
 <button class="btn btn-success" mat-button>Guardar</button>
 <button class="btn btn-dark" mat-button [mat-dialog-close]="true">Cerrar</button>
+</div>
+</form>
+
+
 <div>
 
 </div>
