@@ -32,12 +32,14 @@
         <td>{{product.idProducto}}</td>
         <td>{{product.nombreProducto}}</td>
         <td>{{product.descripcionProducto}}</td>
-        <td>Cantidad</td>
+        <td>{{product.cantidad}}</td>
         <td>{{product.precioProducto}}</td>
-        <td><button type="button" (click)="openEditarDialog()" class="btn btn-light">Editar</button>
+        <td><button type="button" (click)="openEditarDialog(product.idProducto)" class="btn btn-light">Editar</button>
         <button type="button" class="btn btn-danger btnDelete" ><mat-icon>delete</mat-icon></button></td>
       </tr>
       </tbody>
+
     </table>
+  
   </div>
 </div>

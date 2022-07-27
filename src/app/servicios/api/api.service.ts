@@ -9,14 +9,20 @@ import { Observable } from 'rxjs';
 })
 export class ApiService {
 
-  url: string = "https://localhost:44350/AgregarProducto?"
+  url: string = "https://localhost:44350/api/Producto/AgregarProducto"
+  urlRetornarProducto: string =""
 
   constructor(private http:HttpClient) { }
 
-  ingresarProducto(form:ProductoI):Observable<ResponseI>{
+  ingresarProducto(form:any):Observable<ResponseI>{
 
     let direccion = this.url
     return this.http.post<ResponseI>(direccion, form)
+  }
+
+  retornarProducto(id:number){
+
+
   }
 
 

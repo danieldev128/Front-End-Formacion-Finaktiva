@@ -1,7 +1,6 @@
 export interface ProductoI{
   nombreProducto:string;
-  precioProducto:string;
+  precioUnitario:string;
   descripcionProducto: string;
   disponible: boolean;
-
 }

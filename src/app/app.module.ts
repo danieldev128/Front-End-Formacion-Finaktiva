@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule,NO_ERRORS_SCHEMA } from '@angular/core';
 
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -20,7 +20,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { HttpClientModule} from '@angular/common/http';
 import { EditarProductoComponent } from './gestor-productos/editar-producto/editar-producto.component';
 import { AgregarProductoComponent } from './gestor-productos/agregar-producto/agregar-producto.component';
-import {MatDialogModule} from '@angular/material/dialog';
+import {MatDialogModule, MatDialog, MatDialogRef} from '@angular/material/dialog';
 
 
 
@@ -34,6 +34,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 
   ],
   imports: [
+
     MatDialogModule,
     MatButtonModule,
     BrowserModule,
@@ -46,12 +47,14 @@ import {MatDialogModule} from '@angular/material/dialog';
     Ng2SearchPipeModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    
 
 
   ],
   providers: [],
-  bootstrap: [AppComponent,GestorProductosComponent],
+  bootstrap: [AppComponent],
+  schemas: [NO_ERRORS_SCHEMA]
 
 })
 export class AppModule { }

@@ -12,14 +12,20 @@ import {ProductoI} from '../../modelos/producto.interface'
 })
 export class AgregarProductoComponent implements OnInit {
 
-   productoForm = new FormGroup({
+    productoForm = new FormGroup({
     nombreProducto : new FormControl('', Validators.required),
     descripcionProducto : new FormControl('', Validators.required),
    // cantidad : new FormControl('',Validators.required),
-    precioUnitario : new FormControl('',Validators.required)
+    precioProducto : new FormControl('',Validators.required),
+    disponible: new FormControl('',)
 
 
   })
+
+
+
+
+
   constructor(
     public dialogRef: MatDialogRef<AgregarProductoComponent>,
     @Inject(MAT_DIALOG_DATA) public message: string, public api:ApiService
@@ -27,17 +33,31 @@ export class AgregarProductoComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  onClickNo(): void{
+
+  checkbox: boolean = true;
+  checkClick(val:any){
+    this.checkbox = !val;
+    console.log(this.checkbox)
+
+  }
+
+  onClickGuardar(): void{
     this.dialogRef.close();
+    const valor = document.getElementById("disponbleCheck") as HTMLInputElement
+    console.log(valor)
 
   }
 
   onRegister(form:any){
-
-    this.api.ingresarProducto(form).subscribe(data =>{
+     form = this.productoForm.value;
+     console.log("apiService");
+     console.log(form);
+     this.api.ingresarProducto(form).subscribe(data =>{
       console.log(data)
 
     });
+
+
 
 
   }

@@ -19,15 +19,15 @@
     -->
     <div class="form mt-1 col-5">
       <label class="form-label" for="form3Example3">Precio unitario: </label>
-      <mat-icon id="moneyIcon">attach_money</mat-icon><input type="text" style="text-transform: uppercase;" required id="precioUnitario" class="form-control" formControlName="precioUnitario"/>
+      <mat-icon id="moneyIcon">attach_money</mat-icon><input type="text" style="text-transform: uppercase;" required id="precioUnitario" class="form-control" formControlName="precioProducto"/>
     </div>
     <div class="form-check form-switch mt-3 mb-3">
-      <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" checked>
+      <input class="form-check-input" type="checkbox" id="disponbleCheck"  checked [(ngModel)] = "checkbox" [checked]="checkbox" (change) = "checkClick(checkbox)" formControlName="disponible">
       <label class="form-check-label" for="flexSwitchCheckDefault">¿Disponible?</label>
     </div>
 
 
-    <button class="btn btn-success" mat-button (click)="onClickNo()">Guardar</button>
+    <button class="btn btn-success" mat-button >Guardar</button>
     <button class="btn btn-dark" mat-button [mat-dialog-close]="true">Cerrar</button>
   </form>
 
