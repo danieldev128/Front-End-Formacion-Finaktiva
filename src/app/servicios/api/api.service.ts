@@ -4,13 +4,15 @@ import {ResponseI} from '../../modelos/response.interface';
 import {HttpClient, HttpHeaders} from '@angular/common/http'
 import { Observable } from 'rxjs';
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
 
   url: string = "https://localhost:44350/api/Producto/AgregarProducto"
-  urlRetornarProducto: string =""
+  urlRetornarProducto: string ="https://localhost:44350/api/Producto/EditarProducto?idProducto="
+  productoResponse: any;
 
   constructor(private http:HttpClient) { }
 
@@ -20,8 +22,13 @@ export class ApiService {
     return this.http.post<ResponseI>(direccion, form)
   }
 
-  retornarProducto(id:number){
+  retornarProducto(id:number):Observable<ProductoI>{
 
+    let productoResponse: any
+    productoResponse = this.http
+    .post(this.urlRetornarProducto +  id,"" )
+
+     return productoResponse
 
   }
 

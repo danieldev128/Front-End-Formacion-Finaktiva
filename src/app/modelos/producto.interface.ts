@@ -1,6 +1,8 @@
 export interface ProductoI{
-  nombreProducto:string;
-  precioUnitario:string;
-  descripcionProducto: string;
-  disponible: boolean;
+  nombreProducto:any;
+  descripcionProducto:any;
+  cantidad: any;
+  precioProducto: any;
+  disponible: any;
 }
+

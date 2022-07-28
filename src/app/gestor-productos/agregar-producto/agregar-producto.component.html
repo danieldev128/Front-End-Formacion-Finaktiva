@@ -5,18 +5,18 @@
     <form  [formGroup] ="productoForm" (ngSubmit)="onRegister(productoForm.value)" class="mx-auto">
     <div class="form  mt-1 col-7" >
       <label class="form-label" for="form3Example3">Nombre de producto:</label>
-      <input type="email" style="text-transform: uppercase;" required id="nombreProducto" class="form-control" formControlName="nombreProducto" />
+      <input type="email" style="text-transform: uppercase;" required id="nombreProducto"  class="form-control" formControlName="nombreProducto" />
     </div>
     <div class="form mx-auto mt-1 ">
       <label class="form-label"  for="form3Example3">Descripcion de producto:</label>
       <input type="text"  style="text-transform: uppercase;" required id="descripcion" class="form-control" formControlName="descripcionProducto" />
     </div>
-    <!--
-    <div class="form  mx-auto">
+
+    <div class="form col-4">
       <label class="form-label" for="form3Example3">Cantidad Inicial:</label>
       <input type="text" style="text-transform: uppercase;" required id="form3Example3" class="form-control" formControlName="cantidad" />
     </div>
-    -->
+
     <div class="form mt-1 col-5">
       <label class="form-label" for="form3Example3">Precio unitario: </label>
       <mat-icon id="moneyIcon">attach_money</mat-icon><input type="text" style="text-transform: uppercase;" required id="precioUnitario" class="form-control" formControlName="precioProducto"/>

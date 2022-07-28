@@ -4,25 +4,25 @@
     <div class="form  mt-1 col-3">
       <label class="form-label" for="form3Example3">Id de producto:</label>
       <input type="text" disabled style="text-transform: uppercase;"
-      required id="form3Example3" class="form-control" />
+      required id="form3Example3" [value]="data.idProducto" class="form-control" />
     </div>
-  <div class="form mt-1 col-5">
+  <div class="form mt-1 col-7">
     <label class="form-label" for="form3Example3">Nombre de producto:</label>
-    <input type="text" style="text-transform: uppercase;" required id="form3Example3" class="form-control" />
+    <input type="text" [value] = "data.nombreProducto" style="text-transform: uppercase;" required id="form3Example3" class="form-control" />
   </div>
 
   <div class="form mx-auto mt-1">
     <label class="form-label"  for="form3Example3">Descripcion de producto:</label>
-    <input type="text"  style="text-transform: uppercase;" required id="form3Example3" class="form-control" />
+    <input type="text"  [value]="data.descripcionProducto" style="text-transform: uppercase;" required id="form3Example3" class="form-control" />
   </div>
   <div class="form  mt-1 col-4">
     <label class="form-label" for="form3Example3">Cantidad:</label>
-    <input type="text" style="text-transform: uppercase;" required id="form3Example3" class="form-control" />
+    <input type="text" [value]="data.cantidad" style="text-transform: uppercase;" required id="form3Example3" class="form-control" />
   </div>
   <div class="form mt-1 col-4 mb-3">
     <label class="form-label"  for="form3Example3">Precio unitario:</label>
     <mat-icon id="moneyIcon">attach_money</mat-icon>
-    <input type="text" style="text-transform: uppercase;" required id="form3Example3" class="form-control" />
+    <input type="text" [value]="data.precioProducto" style="text-transform: uppercase;" required id="form3Example3" class="form-control" />
   </div>
 <button class="btn btn-success" mat-button>Guardar</button>
 
