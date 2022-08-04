@@ -5,7 +5,7 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ApiService } from '../../servicios/api/api.service'
 import { ProductoI } from '../../modelos/producto.interface'
 import { formatCurrency } from '@angular/common';
-
+import Swal from 'sweetalert2'
 @Component({
   selector: 'app-agregar-producto',
   templateUrl: './agregar-producto.component.html',
@@ -35,7 +35,7 @@ export class AgregarProductoComponent implements OnInit {
 
   checkClick(val: any) {
     this.checkbox = !val;
-    console.log(this.checkbox)
+    console.log(this.checkbox);
   }
 
   onClickGuardar(): void {
@@ -51,8 +51,10 @@ export class AgregarProductoComponent implements OnInit {
       this.api.ingresarProducto(form).subscribe(data => {
         console.log(data.code);
         if (data.code == "200") {
-          alert("Producto registrado correctamente");
+          this.showModal();
           this.productoForm.reset();
+          this.checkbox = true;
+          this.dialogRef.close();
         } else {
           alert("Existe un error, no se pudo registrar producto")
           this.dialogRef.close();
@@ -83,6 +85,15 @@ export class AgregarProductoComponent implements OnInit {
     }
     console.log(flag);
     return flag;
+  }
+
+  showModal(){
+    Swal.fire(
+      'Registro añadido con éxito'
+
+    )
+
+
   }
 
 

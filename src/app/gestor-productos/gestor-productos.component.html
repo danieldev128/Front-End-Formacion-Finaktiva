@@ -22,7 +22,7 @@
         <th>Descripcion de producto</th>
         <th>Cantidad</th>
         <th>Precio</th>
-
+        <th>¿Disponible?</th>
         <th>Acción</th>
 
       </tr>
@@ -34,12 +34,15 @@
         <td>{{product.descripcionProducto}}</td>
         <td>{{product.cantidad}}</td>
         <td>{{product.precioProducto}}</td>
+        <td><ng-template [ngIf]="product.disponible" [ngIfElse]="elseBlock">Sí</ng-template>
+          <ng-template #elseBlock>No</ng-template>
+        </td>
         <td><button type="button" (click)="openEditarDialog(product.idProducto)" class="btn btn-light">Editar</button>
         <button type="button" class="btn btn-danger btnDelete" ><mat-icon>delete</mat-icon></button></td>
       </tr>
       </tbody>
 
     </table>
-  
+
   </div>
 </div>

@@ -1,5 +1,5 @@
 <div class="mat-dialog-content"><h2>Edición de producto</h2>
-<form>
+<form [formGroup]="productoForm" (ngSubmit)="onUpdate(productoForm.value)">
   <div class="mx-auto">
     <div class="form  mt-1 col-3">
       <label class="form-label" for="form3Example3">Id de producto:</label>
@@ -8,29 +8,33 @@
     </div>
   <div class="form mt-1 col-7">
     <label class="form-label" for="form3Example3">Nombre de producto:</label>
-    <input type="text" [value] = "data.nombreProducto" style="text-transform: uppercase;" required id="form3Example3" class="form-control" />
+    <input type="text"  style="text-transform: uppercase;" required id="form3Example3" class="form-control" formControlName="nombreProducto" />
   </div>
 
   <div class="form mx-auto mt-1">
     <label class="form-label"  for="form3Example3">Descripcion de producto:</label>
-    <input type="text"  [value]="data.descripcionProducto" style="text-transform: uppercase;" required id="form3Example3" class="form-control" />
+    <input type="text"   style="text-transform: uppercase;" required id="form3Example3" class="form-control" formControlName="descripcionProducto" />
   </div>
   <div class="form  mt-1 col-4">
     <label class="form-label" for="form3Example3">Cantidad:</label>
-    <input type="text" [value]="data.cantidad" style="text-transform: uppercase;" required id="form3Example3" class="form-control" />
+    <input type="text" style="text-transform: uppercase;" required id="form3Example3" class="form-control" formControlName="cantidad"  />
   </div>
   <div class="form mt-1 col-4 mb-3">
     <label class="form-label"  for="form3Example3">Precio unitario:</label>
     <mat-icon id="moneyIcon">attach_money</mat-icon>
-    <input type="text" [value]="data.precioProducto" style="text-transform: uppercase;" required id="form3Example3" class="form-control" />
+    <input type="text"  style="text-transform: uppercase;" required id="form3Example3" class="form-control" formControlName="precioProducto"/>
+  </div>
+  <div class="form-check form-switch mt-3 mb-3">
+    <input class="form-check-input" type="checkbox" id="disponbleCheck"  checked [(ngModel)] = "checkbox" [checked]="checkbox" (change) = "checkClick(checkbox)" formControlName="disponible" >
+    <label class="form-check-label" for="flexSwitchCheckDefault">¿Disponible?</label>
   </div>
 <button class="btn btn-success" mat-button>Guardar</button>
-
-
 <button class="btn btn-dark" mat-button [mat-dialog-close]="true">Cerrar</button>
+
 </div>
 </form>
-
+<button class="btn btn-warning" style="float:right;" (click)="cleanForm()">Limpiar</button>
 <div>
+
 
 </div>

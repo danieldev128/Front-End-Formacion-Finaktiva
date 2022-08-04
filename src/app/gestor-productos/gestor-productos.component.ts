@@ -28,7 +28,6 @@ export class GestorProductosComponent implements OnInit {
   searchText: any;
   products: Array<any> = []
   jsonData: any;
-  url: string = "https://localhost:44350/api/Producto/EditarProducto?idProducto=";
 
   public productoEdit!: any;
   getData() {
@@ -37,13 +36,8 @@ export class GestorProductosComponent implements OnInit {
       .subscribe((response: any) => {
         this.products = JSON.parse(JSON.stringify(response)).data
         //console.log(this.products)
-
-
       });
-
-
   }
-
 
   ngOnInit(): void {
   }
@@ -54,27 +48,23 @@ export class GestorProductosComponent implements OnInit {
       height: '500px',
       data: 'Ingreso de producto'
     });
-    dialogRef.afterClosed().subscribe(res => {
+      dialogRef.afterClosed().subscribe(res => {
       console.log(res);
-
     });
 
     dialogRef.afterClosed().subscribe(res => {
+        console.log(res);
+        console.log('Formulario cerrado');
+        this.delay(1000);
+        window.location.reload();
 
-      console.log(res);
-
-      if (res) {
-        console.log('Formulario cerrado')
-        this.ngOnInit();
-      }
     })
   }
+
   openEditarDialog(id: number) {
     console.log(id);
     this.apiService.retornarProducto(id).subscribe(data => {
       this.productoEdit = (JSON.parse(JSON.stringify(data)).data)
-
-
       const dialogRef = this.dialog.open(EditarProductoComponent, {
         width: '500px',
         height: '500px',
@@ -82,8 +72,18 @@ export class GestorProductosComponent implements OnInit {
 
       });
 
+      dialogRef.afterClosed().subscribe(res =>{
+          console.log(res);
+          window.location.reload();
+
+      });
+
     });
 
   }
+
+    delay(ms: number) {
+    return new Promise( resolve => setTimeout(resolve, ms) );
+}
 
 }

@@ -11,7 +11,8 @@ import { Observable } from 'rxjs';
 export class ApiService {
 
   url: string = "https://localhost:44350/api/Producto/AgregarProducto"
-  urlRetornarProducto: string ="https://localhost:44350/api/Producto/EditarProducto?idProducto="
+  urlRetornarProducto: string ="https://localhost:44350/api/Producto/BuscarProducto?idProducto="
+  urlEditarProducto: string = "https://localhost:44350/api/Producto/EditarProducto"
   productoResponse: any;
 
   constructor(private http:HttpClient) { }
@@ -19,7 +20,7 @@ export class ApiService {
   ingresarProducto(form:any):Observable<ResponseI>{
 
     let direccion = this.url
-    return this.http.post<ResponseI>(direccion, form)
+    return this.http.post<ResponseI>(direccion, form);
   }
 
   retornarProducto(id:number):Observable<ProductoI>{
@@ -27,8 +28,15 @@ export class ApiService {
     let productoResponse: any
     productoResponse = this.http
     .post(this.urlRetornarProducto +  id,"" )
-
      return productoResponse
+  }
+  editarProducto(formEdit:any):Observable<ResponseI>{
+
+
+     return this.http.post<ResponseI>(this.urlEditarProducto,formEdit);
+
+
+
 
   }
 
